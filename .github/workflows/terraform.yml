@@ -69,14 +69,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
       
-    # Add Node.js to PATH if not already present
-    - name: Add Node.js to PATH
+    # Symlink to Node.js binary
+    - name: Symlink to Node.js binary
       run: |
-        mkdir -p $HOME/.local/bin || :
-        ln -s $PWD/externals/node20/bin/node $HOME/.local/bin/node || :
-        if [[ ":$PATH:" != *":$PWD/externals/node20/bin:"* ]]; then
-          echo 'export PATH=$PATH:$PWD/externals/node20/bin' >> $GITHUB_ENV
-        fi
+      sudo ln -s ./externals/node20/bin/node /usr/local/bin/node || :
+      sudo chown runner:docker /usr/local/bin/node || :
 
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
     - name: Setup Terraform
