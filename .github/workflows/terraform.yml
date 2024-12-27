@@ -74,7 +74,9 @@ jobs:
       run: |
         mkdir -p $HOME/.local/bin || :
         ln -s $PWD/externals/node20/bin/node $HOME/.local/bin/node || :
-
+        if [[ ":$PATH:" != *":$PWD/externals/node20/bin:"* ]]; then
+          echo 'export PATH=$PATH:$PWD/externals/node20/bin' >> $GITHUB_ENV
+        fi
 
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
     - name: Setup Terraform
