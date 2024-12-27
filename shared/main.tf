@@ -5,7 +5,4 @@ resource "docker_container" "nginx" {
     internal = 80
     external = 9080
   }
-  lifecycle {
-    create_before_destroy = false
-  }
 }
