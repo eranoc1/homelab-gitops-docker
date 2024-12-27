@@ -72,7 +72,7 @@ jobs:
     # Add Node.js to PATH if not already present
     - name: Add Node.js to PATH
       run: |
-        mkdir -p $HOME/.local/bin
+        mkdir -p $HOME/.local/bin || :
         if [ -L $HOME/.local/bin/node]; then
         ln -s $PWD/externals/node20/bin/node $HOME/.local/bin/node || :
         fi
