@@ -1,0 +1,24 @@
+---
+services:
+  ghrunner:
+    image: ghcr.io/actions/actions-runner:2.321.0
+    container_name: ghrunner
+    network_mode: bridge
+    command: "./run.sh"
+    #command: /bin/bash
+    #stdin_open: true
+    #tty: true
+    #environment:
+    volumes:
+      - ./ghmnt/.credentials:/home/runner/.credentials
+      - ./ghmnt/.credentials_rsaparams:/home/runner/.credentials_rsaparams
+      - ./ghmnt/.env:/home/runner/.env
+      - ./ghmnt/.path:/home/runner/.path
+      - ./ghmnt/.runner:/home/runner/.runner
+      - ./ghmnt/.sudo_as_admin_successful:/home/runner/.sudo_as_admin_successful
+      - ./ghmnt/svc.sh:/home/runner/svc.sh        
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: unless-stopped
+
+#volumes:
+#  ghrunnerhome:
