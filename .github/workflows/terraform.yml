@@ -75,7 +75,7 @@ jobs:
         mkdir -p $HOME/.local/bin
         if [ -L $HOME/.local/bin/node]; then
         ln -s $PWD/externals/node20/bin/node $HOME/.local/bin/node || :
-      fi
+        fi
 
 
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
