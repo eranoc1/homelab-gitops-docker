@@ -85,8 +85,8 @@ jobs:
     # cd to Terraform shared directory
     - name: Change to Terraform shared directory
       run: |
-      cd shared
-      echo $PWD
+        cd shared
+        echo $PWD
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
