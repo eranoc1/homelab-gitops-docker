@@ -69,6 +69,10 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
+      # Create a symlink to the Node.js binary from an existing file
+    - name: Create Node.js Symlink
+      run: ln -s $PWD/externals/node20/bin/node /usr/local/bin/node
+
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v1
