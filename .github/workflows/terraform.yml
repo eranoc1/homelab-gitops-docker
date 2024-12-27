@@ -68,9 +68,9 @@ jobs:
     # Checkout the repository to the GitHub Actions runner
     - name: Checkout
       uses: actions/checkout@v4
-
-      # Add Node.js to PATH
-      - name: Add Node.js to PATH
+      
+    # Add Node.js to PATH if not already present
+    - name: Add Node.js to PATH
       run: |
         if [[ ":$PATH:" != *":$PWD/externals/node20/bin:"* ]]; then
           echo 'export PATH=$PATH:$PWD/externals/node20/bin' >> $GITHUB_ENV
