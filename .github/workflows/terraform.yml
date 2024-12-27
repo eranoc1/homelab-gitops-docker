@@ -72,7 +72,9 @@ jobs:
       # Create a symlink to the Node.js binary from an existing file
     - name: Create Node.js Symlink
       run: |
-        sudo ln -s $PWD/externals/node20/bin/node /usr/local/bin/node
+        if [ ! -f /usr/local/bin/node ]; then
+          sudo ln -s $PWD/externals/node20/bin/node /usr/local/bin/node
+        fi
         sudo chown runner:docker /usr/local/bin/node
 
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
