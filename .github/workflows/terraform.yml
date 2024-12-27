@@ -73,7 +73,7 @@ jobs:
     - name: Symlink to Node.js binary
       run: |
         sudo ln -s ./externals/node20/bin/node /usr/local/bin/node || :
-        sudo chown runner:docker /usr/local/bin/node || :
+        sudo chown runner.docker /usr/local/bin/node || :
 
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
     - name: Setup Terraform
