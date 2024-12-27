@@ -74,7 +74,7 @@ jobs:
       run: |        
         if [ ! -L /usr/local/bin/node ]; then
           sudo ln -s $HOME/externals/node20/bin/node /usr/local/bin/node || :
-        fi          
+        fi
 
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
     - name: Setup Terraform
