@@ -58,6 +58,9 @@ jobs:
     name: 'Terraform'
     runs-on: [self-hosted, linux, ARM64, homelab]
     environment: production
+    defaults:
+      run:
+        working-directory: shared
 
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
