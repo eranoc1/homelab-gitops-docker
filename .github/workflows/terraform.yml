@@ -72,7 +72,7 @@ jobs:
     # Symlink to Node.js binary
     - name: Symlink to Node.js binary
       run: |        
-        if [ -L /usr/local/bin/node ]; then
+        if [ ! -L /usr/local/bin/node ]; then
           sudo ln -s $HOME/externals/node20/bin/node /usr/local/bin/node || :
         fi          
 
