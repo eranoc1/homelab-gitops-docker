@@ -101,11 +101,11 @@ jobs:
         echo $PWD
         terraform init
     # Create a new group to allow the user to run Terraform commands with Docker provider
-    - name: Create new group and add user
-      run: |
-        sudo groupadd -g 998 docker
-        sudo usermod -aG docker $(whoami)
-        newgrp
+    # - name: Create new group and add user
+    #   run: |
+    #     sudo groupadd -g 998 docker
+    #     sudo usermod -aG docker $(whoami)
+    #     newgrp
         
     # Checks that all Terraform configuration files adhere to a canonical format
     - name: Terraform Format
