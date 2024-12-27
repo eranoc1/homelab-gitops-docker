@@ -63,7 +63,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: shared
+        working-directory: ./shared
 
     steps:
     # Checkout the repository to the GitHub Actions runner
