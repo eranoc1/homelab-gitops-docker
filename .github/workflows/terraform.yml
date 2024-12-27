@@ -63,7 +63,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: shared
+        working-directory: /home/runner/_work/homelab-gitops/homelab-gitops/shared
 
     steps:
     # Checkout the repository to the GitHub Actions runner
