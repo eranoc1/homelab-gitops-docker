@@ -75,7 +75,7 @@ jobs:
         sudo rm /usr/local/bin/node || :
         sudo ln -s $PWD/externals/node20/bin/node /usr/local/bin/node || :
         if [ -L /usr/local/bin/node ]; then
-          sudo chown runner:docker /usr/local/bin/node
+          sudo chown runner:docker /usr/local/bin/node || :
         fi
 
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
