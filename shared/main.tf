@@ -7,7 +7,7 @@ resource "docker_container" "nginx-gitops" {
   }
 }
 resource "docker_container" "nginx-gitops1" {
-  name  = var.container_name
+  name  = "nginx-gitops1"
   image = var.image_name
   ports {
     internal = 80
