@@ -1,7 +1,7 @@
 variable "image_name" {
   description = "The Docker image to use"
   type        = string
-  default     = "nginx:alpine-stable"
+  default     = "nginx:stable-alpine-slim"
 }
 
 variable "container_name" {
