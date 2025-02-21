@@ -91,13 +91,13 @@ jobs:
     # cd to Terraform shared directory
     - name: Change to Terraform shared directory
       run: |
-        cd shared
+        #cd shared
         echo $PWD
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
       run: |
-        cd shared
+        #cd shared
         echo $PWD
         terraform init
     # Create a new group to allow the user to run Terraform commands with Docker provider
@@ -110,14 +110,14 @@ jobs:
     # Checks that all Terraform configuration files adhere to a canonical format
     - name: Terraform Format
       run: |
-        cd shared
+        #cd shared
         echo $PWD
         terraform fmt -check
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
       run: |
-        cd shared
+        #cd shared
         echo $PWD
         sudo /usr/bin/terraform plan -input=false
 
@@ -131,5 +131,5 @@ jobs:
     - name: Terraform Apply
       if: github.ref == 'refs/heads/dev' && github.event_name == 'push'
       run: |
-        cd shared
+        #cd shared
         sudo /usr/bin/terraform apply -auto-approve -input=false || true
