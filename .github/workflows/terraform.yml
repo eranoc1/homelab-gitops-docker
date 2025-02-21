@@ -119,12 +119,12 @@ jobs:
       run: |
         #cd shared
         echo $PWD
-        sudo /usr/bin/terraform plan -input=false
+        sudo /usr/bin/terraform plan -input=false | tee tfplan.txt
 
-    # - name: Remove existing container
+    - name: Remove existing container
     #   if: github.ref == 'refs/heads/dev' && github.event_name == 'push'
-    #   run: |
-    #     sudo docker rm -f nginx-gitops || true
+      run: |
+        sudo docker rm -f $(cat tfplan.txt | grep "+" | grep "resource" | awk '{print $5}' | cut -d '"' -f 2) || true
 
       # On push to "main", build or change infrastructure according to Terraform configuration files
       # Note: It is recommended to set up a required "strict" status check in your repository for "Terraform Cloud". See the documentation on "strict" required status checks for more information: https://help.github.com/en/github/administering-a-repository/types-of-required-status-checks
