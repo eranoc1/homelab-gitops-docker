@@ -121,7 +121,7 @@ jobs:
         echo $PWD
         sudo /usr/bin/terraform plan -input=false | tee tfplan.txt
 
-    - name: Remove existing container
+    - name: Remove existing container/s
     #   if: github.ref == 'refs/heads/dev' && github.event_name == 'push'
       run: |
         sudo docker rm -f $(cat tfplan.txt | grep "+" | grep "resource" | awk '{print $5}' | cut -d '"' -f 2) || true
