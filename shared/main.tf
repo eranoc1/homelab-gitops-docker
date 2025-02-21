@@ -3,6 +3,6 @@ resource "docker_container" "nginx-gitops" {
   image = var.image_name
   ports {
     internal = 80
-    external = 9080
+    external = 7080
   }
 }
