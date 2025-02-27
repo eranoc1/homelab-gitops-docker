@@ -1,3 +1,3 @@
-module "provider" {
-  source = "../shared"
-}
+# module "provider" {
+#   source = "../shared"
+# }
