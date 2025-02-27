@@ -1,6 +1,6 @@
-module "provider" {
-  source = "../shared"
-}
+# module "provider" {
+#   source = "../shared"
+# }
 resource "docker_container" cloudflared {
   name  = var.container_name 
   image = var.image_name
