@@ -1,7 +1,7 @@
 variable "image_name" {
   description = "The Docker image to use"
   type        = string
-  default     = "cloudflared:2025.2.1-arm64"
+  default     = "cloudflare/cloudflared:2025.2.1-arm64"
 }
 
 variable "container_name" {
@@ -19,6 +19,7 @@ variable "cloudflared_token" {
 #   type        = string
 #   default     = "tunnel --no-autoupdate run --token ${var.cloudflared_token}"
 # }
+
 variable "command" {
   description = "Docker container command"
   type        = string
