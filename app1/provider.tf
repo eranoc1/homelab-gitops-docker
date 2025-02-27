@@ -1,3 +1,3 @@
 module "provider" {
-  source = "../shared/modules"
+  source = "../shared"
 }
