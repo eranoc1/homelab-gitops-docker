@@ -126,6 +126,12 @@ jobs:
       run: |
         sudo docker rm -f $(cat .tfplanout | grep "+" | grep "resource" | awk '{print $5}' | cut -d '"' -f 2) || true
 
+    - name: Set TF_VAR_cloudflared_token
+      env:
+        CLOUDFLARED_TOKEN: ${{ secrets.CLOUDFLARED_TOKEN }}
+      run: echo "TF_VAR_cloudflared_token=${{ secrets.CLOUDFLARED_TOKEN }}" >> $GITHUB_ENV
+
+        
       # On push to "main", build or change infrastructure according to Terraform configuration files
       # Note: It is recommended to set up a required "strict" status check in your repository for "Terraform Cloud". See the documentation on "strict" required status checks for more information: https://help.github.com/en/github/administering-a-repository/types-of-required-status-checks
     - name: Terraform Apply
@@ -135,4 +141,5 @@ jobs:
       run: |
         #cd shared
         #sudo /usr/bin/terraform apply -auto-approve -input=false || true
-        sudo /usr/bin/terraform apply -auto-approve -input=false -var "cloudflared_token=${{ secrets.CLOUDFLARED_TOKEN }}"
+        sudo /usr/bin/terraform apply -auto-approve -input=false 
+        #-var "cloudflared_token=${{ secrets.CLOUDFLARED_TOKEN }}"
