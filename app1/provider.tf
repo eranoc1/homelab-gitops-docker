@@ -1,3 +1,3 @@
-module "providers" {
-  source = "../shared/provider.tf"
+module "provider" {
+  source = "../../shared/provider.tf"
 }
