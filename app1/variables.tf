@@ -19,3 +19,4 @@ variable "command" {
   type        = string
   default     = "tunnel --no-autoupdate run --token ${var.cloudflared_token}" "
 }
+
