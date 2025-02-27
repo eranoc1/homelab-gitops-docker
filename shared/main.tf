@@ -9,9 +9,6 @@ resource "docker_container" "nginx-gitops" {
 resource "docker_container" "nginx-gitops1" {
   name  = "nginx-gitops1"
   image = var.image_name
-  lifecycle {
-    create_before_destroy = false
-  }  
   ports {
     internal = 80
     external = 5080
