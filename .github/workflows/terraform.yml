@@ -132,4 +132,5 @@ jobs:
       if: github.ref == 'refs/heads/dev' && github.event_name == 'push'
       run: |
         #cd shared
-        sudo /usr/bin/terraform apply -auto-approve -input=false || true
+        #sudo /usr/bin/terraform apply -auto-approve -input=false || true
+        sudo /usr/bin/terraform apply -auto-approve -input=false
