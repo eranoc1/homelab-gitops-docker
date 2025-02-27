@@ -15,6 +15,14 @@ variable "cloudflared_token" {
   description = "cloudflared token"
   type        = string
 }
+<<<<<<< HEAD
+=======
+# variable "command" {
+#   description = "Docker container command"
+#   type        = string
+#   default     = "tunnel --no-autoupdate run --token ${var.cloudflared_token}"
+# }
+>>>>>>> 79bc897 (Try to fix cloudflared docker image)
 
 variable "command" {
   description = "Docker container command"
