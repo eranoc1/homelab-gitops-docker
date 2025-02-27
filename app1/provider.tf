@@ -1,3 +1,3 @@
 module "provider" {
-  source = "../../shared/provider.tf"
+  source = "../../shared/modules"
 }
