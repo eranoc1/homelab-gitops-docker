@@ -10,7 +10,7 @@ resource "docker_container" "cloudflared" {
     "--no-autoupdate",
     "run",
     "--token",
-    "$TUNNEL_TOKEN"
+    var.tunnel_token
   ]
 }
 
