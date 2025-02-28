@@ -133,7 +133,7 @@ jobs:
 
     - name: Set TF_VAR_tunnel_token
       env:
-        CLOUDFLARED_TOKEN: ${{ secrets.TUNNEL_TOKEN }}
+        TUNNEL_TOKEN: ${{ secrets.TUNNEL_TOKEN }}
       run: echo "TF_VAR_tunnel_token=${{ secrets.TUNNEL_TOKEN }}" >> $GITHUB_ENV
 
         
@@ -141,7 +141,7 @@ jobs:
       # Note: It is recommended to set up a required "strict" status check in your repository for "Terraform Cloud". See the documentation on "strict" required status checks for more information: https://help.github.com/en/github/administering-a-repository/types-of-required-status-checks
     - name: Terraform Apply
       env:
-        CLOUDFLARED_TOKEN: ${{ secrets.CLOUDFLARED_TOKEN }}
+        TUNNEL_TOKEN: ${{ secrets.TUNNEL_TOKEN }}
       if: github.ref == 'refs/heads/dev' && github.event_name == 'push'
       run: |
         #cd shared
