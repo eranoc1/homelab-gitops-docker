@@ -9,6 +9,13 @@ variable "container_name" {
   type        = string
   default     = "cloudflared"
 }
+
+variable "tunnel_token" {
+  description = "tunnel token"
+  type        = string
+  default     = ""
+}
+
 # variable "cloudflared_token" {
 #   description = "cloudflared token"
 #   type        = string
