@@ -23,5 +23,5 @@ variable "cloudflared_token" {
 variable "command" {
   description = "Docker container command"
   type        = string
-  default     = ["tunnel", "--no-autoupdate", "run", "--token"]
+  default     = "tunnel --no-autoupdate run --token"
 }
