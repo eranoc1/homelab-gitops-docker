@@ -11,7 +11,6 @@ resource "docker_container" "cloudflared" {
     "run",
     "--token",
     "$TUNNEL_TOKEN"
-    #"--hello-world"
   ]
 }
 
