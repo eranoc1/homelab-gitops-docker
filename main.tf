@@ -4,6 +4,7 @@ module "app1" {
 variable "tunnel_token" {
   description = "Token for the tunnel"
   type        = string
+  default     = ""
 }
 
 # module "app2" {
