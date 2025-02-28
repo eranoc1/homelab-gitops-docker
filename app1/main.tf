@@ -6,5 +6,6 @@ resource "docker_container" "cloudflared" {
   image = var.image_name
   #command = var.command
   #command = concat(var.command, [var.cloudflared_token])
+  command = ["tunnel","--no-autoupdate","run","--hello-world"]
 }
 
