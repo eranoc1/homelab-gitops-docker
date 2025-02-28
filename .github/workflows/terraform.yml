@@ -147,8 +147,8 @@ jobs:
         #cd shared
         #sudo /usr/bin/terraform apply -auto-approve -input=false || true
         export TF_VAR_tunnel_token=${{ secrets.TUNNEL_TOKEN }}
-        sudo /usr/bin/terraform apply -auto-approve -input=false #
-        #-var "tunnel_token=${{ secrets.TUNNEL_TOKEN }}"
+        sudo /usr/bin/terraform apply -auto-approve -input=false -var "tunnel_token=${{ secrets.TUNNEL_TOKEN }}"
+        
 
     # - name: Restart GitHub Actions runner
     #   if: github.ref == 'refs/heads/dev' && github.event_name == 'push'
