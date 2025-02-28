@@ -9,11 +9,11 @@ variable "container_name" {
   type        = string
   default     = "cloudflared"
 }
-variable "cloudflared_token" {
-  description = "cloudflared token"
-  type        = string
-  default     = ""
-}
+# variable "cloudflared_token" {
+#   description = "cloudflared token"
+#   type        = string
+#   default     = ""
+# }
 # variable "command" {
 #   description = "Docker container command"
 #   type        = string
@@ -26,8 +26,8 @@ variable "cloudflared_token" {
 #   default     = "tunnel --no-autoupdate run --token"
 # }
 
-variable "command" {
-  description = "Docker container command"
-  type        = list(string)
-  default     = ["tunnel", "--no-autoupdate", "run", "--token"]
-}
+# variable "command" {
+#   description = "Docker container command"
+#   type        = list(string)
+#   default     = ["tunnel", "--no-autoupdate", "run", "--token"]
+# }
