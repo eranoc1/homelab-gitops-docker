@@ -131,7 +131,7 @@ jobs:
     #     CLOUDFLARED_TOKEN: ${{ secrets.CLOUDFLARED_TOKEN }}
     #   run: echo "TF_VAR_cloudflared_token=${{ secrets.CLOUDFLARED_TOKEN }}" >> $GITHUB_ENV
 
-      - name: Set TF_VAR_tunnel_token
+    - name: Set TF_VAR_tunnel_token
       env:
         CLOUDFLARED_TOKEN: ${{ secrets.TUNNEL_TOKEN }}
       run: echo "TF_VAR_tunnel_token=${{ secrets.TUNNEL_TOKEN }}" >> $GITHUB_ENV
