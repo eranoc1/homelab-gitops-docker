@@ -10,8 +10,8 @@ variable "container_name" {
   default     = "nginx-gitops"
 }
 
-variable "tunnel_token" {
-  description = "tunnel token"
-  type        = string
-  default     = ""
-}
+# variable "tunnel_token" {
+#   description = "tunnel token"
+#   type        = string
+#   default     = ""
+# }
