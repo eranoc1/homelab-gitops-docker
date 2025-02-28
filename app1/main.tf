@@ -8,7 +8,10 @@ resource "docker_container" "cloudflared" {
   command = [
     "tunnel",
     "--no-autoupdate",
-    "--hello-world"
+    "run",
+    "--token",
+    "$TUNNEL_TOKEN"
+    #"--hello-world"
   ]
 }
 

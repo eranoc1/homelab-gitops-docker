@@ -126,10 +126,15 @@ jobs:
       run: |
         sudo docker rm -f $(cat .tfplanout | grep "+" | grep "resource" | awk '{print $5}' | cut -d '"' -f 2) || true
 
-    - name: Set TF_VAR_cloudflared_token
+    # - name: Set TF_VAR_cloudflared_token
+    #   env:
+    #     CLOUDFLARED_TOKEN: ${{ secrets.CLOUDFLARED_TOKEN }}
+    #   run: echo "TF_VAR_cloudflared_token=${{ secrets.CLOUDFLARED_TOKEN }}" >> $GITHUB_ENV
+
+      - name: Set TF_VAR_tunnel_token
       env:
-        CLOUDFLARED_TOKEN: ${{ secrets.CLOUDFLARED_TOKEN }}
-      run: echo "TF_VAR_cloudflared_token=${{ secrets.CLOUDFLARED_TOKEN }}" >> $GITHUB_ENV
+        CLOUDFLARED_TOKEN: ${{ secrets.TUNNEL_TOKEN }}
+      run: echo "TF_VAR_tunnel_token=${{ secrets.TUNNEL_TOKEN }}" >> $GITHUB_ENV
 
         
       # On push to "main", build or change infrastructure according to Terraform configuration files
