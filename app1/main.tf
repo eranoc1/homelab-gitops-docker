@@ -12,10 +12,3 @@ resource "docker_container" "cloudflared" {
   ]
 }
 
-resource "docker_container" "cloudflared" {
-  provisioner "local-exec" {
-    command = "sudo docker run cloudflare/cloudflared:latest tunnel --no-autoupdate --hello-world"
-    interpreter = ["bash", "-e"]
-  }
-}
-
