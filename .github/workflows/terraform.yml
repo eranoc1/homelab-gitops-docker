@@ -145,6 +145,7 @@ jobs:
       run: |
         #cd shared
         #sudo /usr/bin/terraform apply -auto-approve -input=false || true
+        export TF_VAR_tunnel_token=${{ secrets.TUNNEL_TOKEN }}
         sudo /usr/bin/terraform apply -auto-approve -input=false
         
 

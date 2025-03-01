@@ -7,3 +7,7 @@
 #   value       = docker_container.var.container_name.network_data[0].ip_address
 #   description = "The IP address of the Docker container"
 # }
+
+output "tunnel_token_value" {
+  value = var.tunnel_token
+}
