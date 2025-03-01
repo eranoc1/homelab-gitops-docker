@@ -9,6 +9,12 @@ variable "container_name" {
   type        = string
   default     = "cloudflared"
 }
+variable "network_mode" {
+  description = "The network mode of the Docker container"
+  type        = string
+  default     = "host"
+  
+}
 
 variable "tunnel_token" {
   description = "tunnel token"
