@@ -131,21 +131,21 @@ jobs:
     #     CLOUDFLARED_TOKEN: ${{ secrets.CLOUDFLARED_TOKEN }}
     #   run: echo "TF_VAR_cloudflared_token=${{ secrets.CLOUDFLARED_TOKEN }}" >> $GITHUB_ENV
 
-    - name: Set TF_VAR_tunnel_token
-      env:
-        TUNNEL_TOKEN: ${{ secrets.TUNNEL_TOKEN }}
-      run: echo "TF_VAR_tunnel_token=${{ secrets.TUNNEL_TOKEN }}" >> $GITHUB_ENV
+    # - name: Set TF_VAR_tunnel_token
+    #   env:
+    #     TUNNEL_TOKEN: ${{ secrets.TUNNEL_TOKEN }}
+    #   run: echo "TF_VAR_tunnel_token=${{ secrets.TUNNEL_TOKEN }}" >> $GITHUB_ENV
         
       # On push to "main", build or change infrastructure according to Terraform configuration files
       # Note: It is recommended to set up a required "strict" status check in your repository for "Terraform Cloud". See the documentation on "strict" required status checks for more information: https://help.github.com/en/github/administering-a-repository/types-of-required-status-checks
     - name: Terraform Apply
-      env:
-        TF_VAR_tunnel_token: ${{ secrets.TUNNEL_TOKEN }}
+      # env:
+      #   TF_VAR_tunnel_token: ${{ secrets.TUNNEL_TOKEN }}
       if: github.ref == 'refs/heads/dev' && github.event_name == 'push'
       run: |
         #cd shared
         #sudo /usr/bin/terraform apply -auto-approve -input=false || true
-        export TF_VAR_tunnel_token=${{ secrets.TUNNEL_TOKEN }}
+        #export TF_VAR_tunnel_token=${{ secrets.TUNNEL_TOKEN }}
         sudo /usr/bin/terraform apply -auto-approve -input=false
         
 
