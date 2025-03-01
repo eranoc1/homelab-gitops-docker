@@ -13,4 +13,3 @@ resource "docker_container" "cloudflared" {
     var.tunnel_token
   ]
 }
-
