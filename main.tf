@@ -1,5 +1,5 @@
-module "app1" {
-  source = "./app1"
+module "cloudflared" {
+  source = "./cloudflared"
 }
 # variable "tunnel_token" {
 #   description = "Token for the tunnel"
