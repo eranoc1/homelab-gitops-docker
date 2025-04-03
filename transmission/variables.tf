@@ -48,7 +48,7 @@ variable "transmission_username" {
 variable "transmission_password" {
     description = "The password for the container"
     type        = string
-    default     = ""
+    default     = $tpassword
     sensitive   = true
 }
 

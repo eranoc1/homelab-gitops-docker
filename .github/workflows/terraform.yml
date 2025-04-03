@@ -71,8 +71,13 @@ jobs:
 
     - name: Set Terraform environment variable
       run: echo "TF_VAR_transmission_password=\"${{ secrets.TRANSMISSION_PASSWORD }}\"" >> $GITHUB_ENV
+
     - name: Set Terraform environment variable
-      run: echo "TF_VAR_transmission_password=\"${{ secrets.TRANSMISSION_PASSWORD }}\"" > .transmission_password
+      run: echo "\"${{ secrets.TRANSMISSION_PASSWORD }}\"" > .transmission_password
+
+    - name: Replace $tpassword in variables.tf
+      run: sed -i "s|\$tpassword|$(cat .transmission_password)|g" variables.tf 
+      
     - name: Set Terraform environment variable
       run: echo "TF_VAR_cloudflared_token=${{ secrets.CLOUDFLARED_TOKEN }}" >> $GITHUB_ENV
 
