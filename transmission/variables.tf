@@ -20,14 +20,14 @@ variable "transmission_network_mode" {
 
 variable "transmission_puid" {
   description = "The user ID for the container"
-  type        = number
+  type        = string
   default     = 1001
   
 }
 
 variable "transmission_pgid" {
   description = "The group ID for the container"
-  type        = number
+  type        = string
   default     = 1001
   
 }
@@ -60,13 +60,13 @@ variable "transmission_whitelist" {
 
 variable "transmission_port1" {
     description = "The first port to expose"
-    type        = number
+    type        = string
     default     = 9091
 }
 
 variable "transmission_port2" {
     description = "The first port to expose"
-    type        = number
+    type        = string
     default     = 51413
 }
 
