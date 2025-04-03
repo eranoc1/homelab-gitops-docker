@@ -20,6 +20,7 @@ variable "tunnel_token" {
   description = "tunnel token"
   type        = string
   default     = ""
+  sensitive   = true
 }
 
 # variable "cloudflared_token" {
