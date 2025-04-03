@@ -81,9 +81,18 @@ jobs:
     - name: Set Terraform environment variable
       run: echo "TF_VAR_cloudflared_token=${{ secrets.CLOUDFLARED_TOKEN }}" >> $GITHUB_ENV
 
+    - name: Set Terraform environment variable
+      run: echo "\"${{ secrets.CLOUDFLARED_TOKEN }}\"" >> .cloudflared_token
+
+    - name: Replace cloudflared var.tunnel_token in main.tf
+      run: sed -i "s|\var.tunnel_token|$(cat .cloudflared_token)|g" ./cloudflared/main.tf  
+
     - name: Remove Terraform environment variable temp file
       run: rm .transmission_password
 
+    - name: Remove Terraform environment variable temp file
+      run: rm .cloudflared_token
+      
     # - name: Verify variable (for debugging, remove in production)
     #   run: echo "TF_VAR_transmission_password is set"      
 
@@ -165,7 +174,7 @@ jobs:
         #sudo /usr/bin/terraform apply -auto-approve -input=false || true
         #export TF_VAR_tunnel_token=${{ secrets.TUNNEL_TOKEN }}
         #sed -i 's|var\.tunnel_token|"'$tunnel_token'"|g' cloudflared/main.tf
-        cp ~/cfmain.tf cloudflared/main.tf
+        ##cp ~/cfmain.tf cloudflared/main.tf
         sudo /usr/bin/terraform apply -auto-approve -input=false
         
 
