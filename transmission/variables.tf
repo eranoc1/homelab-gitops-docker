@@ -69,7 +69,7 @@ variable "transmission_volume_name1" {
     default     = "transmissionconfig"
 }
 
-variable "var.transmission_container_path1" {
+variable "transmission_container_path1" {
     description = "The path inside the container for the first volume"
     type        = string
     default     = "/config"
@@ -82,7 +82,7 @@ variable "transmission_volume_name2" {
     default     = "transmissiondownloads"
 }
 
-variable "var.transmission_container_path2" {
+variable "transmission_container_path2" {
     description = "The path inside the container for the second volume"
     type        = string
     default     = "/downloads"
@@ -95,7 +95,7 @@ variable "transmission_volume_name3" {
     default     = "transmissionwatch"
 }
 
-variable "var.transmission_container_path3" {
+variable "transmission_container_path3" {
     description = "The path inside the container for the third volume"
     type        = string
     default     = "/watch"
