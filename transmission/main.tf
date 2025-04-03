@@ -3,30 +3,15 @@ resource "docker_container" "transmission" {
     image = var.transmission_image_name
     network_mode = var.transmission_network_mode
     restart = "unless-stopped"
-    environment {
-        name  = "PUID"
-        value = var.transmission_puid
-    }
-    environment {
-        name  = "PGID"
-        value = var.transmission_pgid
-    }
-    environment {
-        name  = "TZ"
-        value = "var.transmission_tz"
-    }
-    environment {
-        name  = "USER"
-        value = var.transmission_username
-    }
-    environment {
-        name  = "PASS"
-        value = var.transmission_password
-    }
-    environment {
-        name  = "WHITELIST"
-        value = var.transmission_whitelist
-    }
+    env = {
+        PUID      = var.transmission_puid
+        PGID      = var.transmission_pgid
+        TZ        = var.transmission_tz
+        USER      = var.transmission_username
+        PASS      = var.transmission_password
+        WHITELIST = var.transmission_whitelist
+  }
+
     ports {
         internal = var.transmission_port1
         external = var.transmission_port1
