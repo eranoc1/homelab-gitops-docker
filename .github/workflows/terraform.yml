@@ -68,7 +68,16 @@ jobs:
     # Checkout the repository to the GitHub Actions runner
     - name: Checkout
       uses: actions/checkout@v4
-      
+
+    - name: Set Terraform environment variable
+      run: echo "TF_VAR_transmission_password=${{ secrets.TRANSMISSION_PASSWORD }}" >> $GITHUB_ENV
+
+    - name: Set Terraform environment variable
+      run: echo "TF_VAR_cloudflared_token=${{ secrets.CLOUDFLARED_TOKEN }}" >> $GITHUB_ENV
+
+    # - name: Verify variable (for debugging, remove in production)
+    #   run: echo "TF_VAR_transmission_password is set"      
+
     # Symlink to Node.js binary
     # - name: Symlink to Node.js binary
     #   run: |        
