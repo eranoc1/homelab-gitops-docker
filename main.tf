@@ -3,7 +3,7 @@ module "cloudflared" {
 }
 module "transmission" {
    source = "./transmission"
- }
+}
 module "shared" {
   source = "./shared"
 }
