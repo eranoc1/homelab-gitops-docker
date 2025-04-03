@@ -45,6 +45,13 @@ variable "transmission_username" {
     default     = "eran"
 }
 
+variable "transmission_password" {
+    description = "The password for the container"
+    type        = string
+    default     = ""
+    sensitive   = true
+}
+
 variable "transmission_whitelist" {
     description = "The IP addresses to whitelist"
     type        = string
