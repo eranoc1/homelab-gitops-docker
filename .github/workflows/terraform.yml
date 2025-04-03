@@ -90,8 +90,8 @@ jobs:
     - name: Remove Terraform environment variable temp file
       run: rm .transmission_password
 
-    # - name: Remove Terraform environment variable temp file
-    #   run: rm .cloudflared_token
+    - name: Remove Terraform environment variable temp file
+      run: rm .cloudflared_token
       
     # - name: Verify variable (for debugging, remove in production)
     #   run: echo "TF_VAR_transmission_password is set"      
