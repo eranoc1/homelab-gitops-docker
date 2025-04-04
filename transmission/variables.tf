@@ -55,7 +55,7 @@ variable "transmission_password" {
 variable "transmission_whitelist" {
     description = "The IP addresses to whitelist"
     type        = string
-    default     = "127.0.0.1,192.168.1.*"
+    default     = "127.0.0.1,192.168.1.*,172.17.*.*"
 }
 
 variable "transmission_port1" {
