@@ -69,28 +69,28 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
-    - name: Set Terraform environment variable
+    - name: Set Terraform TRANSMISSION_PASSWORD environment variable
       run: echo "TF_VAR_transmission_password=\"${{ secrets.TRANSMISSION_PASSWORD }}\"" >> $GITHUB_ENV
 
-    - name: Set Terraform environment variable
+    - name: Set Terraform TRANSMISSION_PASSWORD environment variable temp file
       run: echo "\"${{ secrets.TRANSMISSION_PASSWORD }}\"" > .transmission_password
 
-    - name: Replace $tpassword in variables.tf
-      run: sed -i "s|\$tpassword|$(cat .transmission_password)|g" ./transmission/variables.tf 
+    - name: Replace var.tpassword in variables.tf
+      run: sed -i "s|var.tpassword|$(cat .transmission_password)|g" ./transmission/variables.tf 
       
-    - name: Set Terraform environment variable
+    - name: Set Terraform CLOUDFLARED_TOKEN environment variable
       run: echo "TF_VAR_cloudflared_token=${{ secrets.CLOUDFLARED_TOKEN }}" >> $GITHUB_ENV
 
-    - name: Set Terraform environment variable
+    - name: Set Terraform CLOUDFLARED_TOKEN environment variable temp file
       run: echo "\"${{ secrets.CLOUDFLARED_TOKEN }}\"" >> .cloudflared_token
 
     - name: Replace cloudflared var.tunnel_token in main.tf
       run: sed -i "s|var.tunnel_token|$(cat .cloudflared_token)|g" ./cloudflared/main.tf  
 
-    - name: Remove Terraform environment variable temp file
+    - name: Remove Terraform environment variable temp file .transmission_password
       run: rm .transmission_password
 
-    - name: Remove Terraform environment variable temp file
+    - name: Remove Terraform environment variable temp file .cloudflared_token
       run: rm .cloudflared_token
       
     # - name: Verify variable (for debugging, remove in production)
