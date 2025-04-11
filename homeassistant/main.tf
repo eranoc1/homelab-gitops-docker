@@ -18,7 +18,7 @@ resource "docker_container" "homeassistant" {
     volumes {
         volume_name    = var.homeassistant_volume_name2
         container_path = var.homeassistant_container_path2
-        mode = "ro"
+        read_only      = "true"
     }
 
 }
