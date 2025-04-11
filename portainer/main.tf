@@ -4,7 +4,7 @@ resource "docker_container" "portainer" {
     network_mode = var.portainer_network_mode
     restart = "unless-stopped"
     labels = {
-        service = var.portainer_container_name
+        service = portainer
     }
     ports {
         internal = var.portainer_port1
