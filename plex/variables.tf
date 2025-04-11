@@ -15,7 +15,7 @@ variable "plex_container_name" {
 variable "plex_network_mode" {
   description = "The network mode for the container"
   type        = string
-  default     = "bridge"
+  default     = "host"
 }
 
 variable "plex_puid" {
