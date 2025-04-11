@@ -33,20 +33,6 @@ variable "homeassistant_container_path1" {
     default     = "/config"
   
 }
-
-variable "homeassistant_volume_name1" {
-    description = "The name of the first volume"
-    type        = string
-    default     = "homeassistantconfig"
-}
-
-variable "homeassistant_container_path1" {
-    description = "The path inside the container for the first volume"
-    type        = string
-    default     = "/config"
-  
-}
-
 variable "homeassistant_volume_name2" {
     description = "The name of the first volume"
     type        = string
