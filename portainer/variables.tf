@@ -31,7 +31,7 @@ variable "portainer_volume_name1" {
 variable "portainer_container_path1" {
     description = "The path inside the container for the first volume"
     type        = string
-    default     = "var/run/docker.sock"
+    default     = "/var/run/docker.sock"
   
 }
 
