@@ -7,6 +7,9 @@ module "transmission" {
 module "plex" {
   source = "./plex"
 }
+module "portainer" {
+  source = "./portainer"
+}
 module "shared" {
   source = "./shared"
 }
