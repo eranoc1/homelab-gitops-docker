@@ -1,4 +1,4 @@
-resource "docker_container" "transmission" {
+resource "docker_container" "plex" {
     name = var.plex_container_name
     image = var.plex_image_name
     network_mode = var.plex_network_mode
