@@ -10,6 +10,9 @@ module "plex" {
 module "portainer" {
   source = "./portainer"
 }
+module "homeassistant" {
+  source = "./homeassistant"
+}
 module "shared" {
   source = "./shared"
 }
