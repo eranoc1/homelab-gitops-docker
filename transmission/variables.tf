@@ -1,7 +1,7 @@
 variable "transmission_image_name" {
   description = "The Docker image to use"
   type        = string
-  default     = "lscr.io/linuxserver/transmission:latest"
+  default     = "lscr.io/linuxserver/transmission:4.0.6"
   
 }
 
