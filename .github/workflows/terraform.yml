@@ -45,10 +45,10 @@
 name: 'Terraform'
 
 on:
-  push:
-    branches: [ "dev" ]
-  # pull_request:
-  #   branches: [ "main" ]
+  # push:
+  #   branches: [ "" ]
+  pull_request:
+    branches: [ "main" ]
 
 permissions:
   contents: read
