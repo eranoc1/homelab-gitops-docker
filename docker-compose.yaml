@@ -16,7 +16,8 @@ services:
       - ./ghmnt/.path:/home/runner/.path
       - ./ghmnt/.runner:/home/runner/.runner
       - ./ghmnt/.sudo_as_admin_successful:/home/runner/.sudo_as_admin_successful
-      - ./ghmnt/svc.sh:/home/runner/svc.sh        
+      - ./ghmnt/.bashrc:/home/runner/.bashrc
+      - ./ghmnt/svc.sh:/home/runner/svc.sh
       - /var/run/docker.sock:/var/run/docker.sock
     restart: unless-stopped
 
