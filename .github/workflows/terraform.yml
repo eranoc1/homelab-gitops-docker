@@ -149,7 +149,7 @@ jobs:
         sudo /usr/bin/terraform plan -input=false | tee .tfplanout
 
     - name: Remove existing container/s
-      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      #if: github.ref == 'refs/heads/main' && github.event_name == 'push'
       run: |
         sudo docker rm -f $(cat .tfplanout | grep "+" | grep "resource" | awk '{print $5}' | cut -d '"' -f 2) || true
 
@@ -168,7 +168,7 @@ jobs:
     - name: Terraform Apply
       # env:
       #   TF_VAR_tunnel_token: ${{ secrets.TUNNEL_TOKEN }}
-      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      #if: github.ref == 'refs/heads/main' && github.event_name == 'push'
       run: |
         #cd shared
         #sudo /usr/bin/terraform apply -auto-approve -input=false || true
