@@ -13,6 +13,9 @@ module "portainer" {
 module "homeassistant" {
   source = "./homeassistant"
 }
+module "upsnap" {
+  source = "./upsnap"
+}
 module "shared" {
   source = "./shared"
 }
