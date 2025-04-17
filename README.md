@@ -16,3 +16,8 @@ All services are defined and managed through version-controlled code to ensure r
 - **Terraform** – Infrastructure provisioning
 - **Docker** – Container runtime
 - **GitHub** – Version control and source of truth
+
+## 📝 Notes
+🚧 This project is a work in progress!
+\
+Documentation is not ready yet and may be updated as development continues.
