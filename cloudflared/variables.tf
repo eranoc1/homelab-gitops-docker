@@ -9,6 +9,7 @@ variable "container_name" {
   type        = string
   default     = "cloudflared"
 }
+
 variable "network_mode" {
   description = "The network mode of the Docker container"
   type        = string
@@ -22,26 +23,3 @@ variable "tunnel_token" {
   default     = ""
   sensitive   = true
 }
-
-# variable "cloudflared_token" {
-#   description = "cloudflared token"
-#   type        = string
-#   default     = ""
-# }
-# variable "command" {
-#   description = "Docker container command"
-#   type        = string
-#   default     = "tunnel --no-autoupdate run --token ${var.cloudflared_token}"
-# }
-
-# variable "command" {
-#   description = "Docker container command"
-#   type        = string
-#   default     = "tunnel --no-autoupdate run --token"
-# }
-
-# variable "command" {
-#   description = "Docker container command"
-#   type        = list(string)
-#   default     = ["tunnel", "--no-autoupdate", "run", "--token"]
-# }
