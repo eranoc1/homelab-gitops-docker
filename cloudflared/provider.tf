@@ -1,7 +1,3 @@
-# module "provider" {
-#   source = "../shared"
-# }
-
 terraform {
   required_providers {
     docker = {
