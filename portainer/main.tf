@@ -17,4 +17,8 @@ resource "docker_container" "portainer" {
         volume_name    = var.portainer_volume_name1
         container_path = var.portainer_container_path1
     }
+    volumes {
+        volume_name    = var.portainer_volume_name2
+        container_path = var.portainer_container_path2
+    }    
 }
