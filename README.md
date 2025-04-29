@@ -19,7 +19,6 @@ All services are defined and managed through version-controlled code to ensure r
 
 ## 📝 Notes
 🚧 This project is a work in progress!
-\
+
 - Documentation is not ready yet and may be updated as development continues.
-\
 - [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) has not yet been implemented for the Docker provider.
