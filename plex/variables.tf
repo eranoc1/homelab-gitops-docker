@@ -1,7 +1,7 @@
 variable "plex_image_name" {
   description = "The Docker image to use"
   type        = string
-  default     = "lscr.io/linuxserver/plex@sha256:6e473f706e360138b32782e64db2e4b8a9586a6de247de3f1537a6b9d814d39c"
+  default     = "lscr.io/linuxserver/plex:1.41.7"
   
 }
 
