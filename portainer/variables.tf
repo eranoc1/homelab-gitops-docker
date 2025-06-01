@@ -1,7 +1,7 @@
 variable "portainer_image_name" {
   description = "The Docker image to use"
   type        = string
-  default     = "portainer/portainer-ce:2.29.0-alpine"
+  default     = "portainer/portainer-ce:2.30.1-alpine"
 }
 
 variable "portainer_container_name" {

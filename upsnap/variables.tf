@@ -1,7 +1,7 @@
 variable "upsnap_image_name" {
   description = "The Docker image to use"
   type        = string
-  default     = "ghcr.io/seriousm4x/upsnap:5.0.4"
+  default     = "ghcr.io/seriousm4x/upsnap:5.1.0"
 }
 
 variable "upsnap_container_name" {
