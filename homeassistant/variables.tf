@@ -1,7 +1,7 @@
 variable "homeassistant_image_name" {
   description = "The Docker image to use"
   type        = string
-  default     = "ghcr.io/home-assistant/home-assistant:2025.5"
+  default     = "ghcr.io/home-assistant/home-assistant:2026.1"
 }
 
 variable "homeassistant_container_name" {
