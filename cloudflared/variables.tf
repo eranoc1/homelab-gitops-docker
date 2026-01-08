@@ -1,7 +1,7 @@
 variable "image_name" {
   description = "The Docker image to use"
   type        = string
-  default     = "cloudflare/cloudflared:2025.5.0"
+  default     = "cloudflare/cloudflared:2025.11.1"
 }
 
 variable "container_name" {
